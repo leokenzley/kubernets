@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: jupyter
+  annotations:
+    desc: "Namespace for Jupyter Notebook Application"
+    proj: "Final Project K8s Course"
+    phone: "6199866XXXX"
+    mail: "leokenzley@gmail.com"
+    owner: "Leo Kenzley"
