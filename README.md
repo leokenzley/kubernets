@@ -79,8 +79,10 @@ $ KUBE_EDITOR="nano" kubectl edit service jupyter-svc
 ### Acesso o browser através da url+porta nova http://192.168.49.2:30000
 ![img_5.png](img_5.png)
 
-
-
+## Mudando a imagem da aplicação jupyter através da linha de comando
+```
+$ kubectl set image deployment/jupyter-dp jupyter-container=jupyter/minimal-notebook:python-3.10
+```
 
 
 
