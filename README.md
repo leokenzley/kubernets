@@ -22,7 +22,7 @@ $ kubectl port-forward jupyter-dp-7db5579d8d-tvmck 8080:8888
 
 ### Criando um serviço pela linha de comando do tipo NodePort (namespace não é obrigatório se estiver no namespace correto)
 ```
-kubectl expose deployment jupyter-dp -n jupyter --type=NodePort --name=jupyter-svc
+$ kubectl expose deployment jupyter-dp -n jupyter --type=NodePort --name=jupyter-svc
 ```
 ### O arquivo de criação do serviço acima pode ser visto com o comando "kubectl get svc -o yaml"
 ```
@@ -67,12 +67,23 @@ metadata:
 ```
 $ minikube service jupyter-svc -n jupyter
 ```
-## Criando uma url de acesso externo direto no k8s
-```
-```
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 ![img_4.png](img_4.png)
+
+## Migrando a porta de acesso da aplicação
+### 1. editar o arquivo de serviço com o nano, setando o nodeport para a porta 30000
+```
+$ KUBE_EDITOR="nano" kubectl edit service jupyter-svc
+```
+### Acesso o browser através da url+porta nova http://192.168.49.2:30000
+![img_5.png](img_5.png)
+
+
+
+
+
+
 
 # Dicas
 ## 1. use o complemento (--dry-run=client) no final do comando para validar o comando, exemplo:
